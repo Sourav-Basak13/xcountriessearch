@@ -1,0 +1,40 @@
+.web_wrapper {
+}
+.search_input_wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px 30px;
+  background: #fbfbfb;
+  box-shadow: 2px 2px 50px 2px #dfdfdf;
+}
+
+.search_input {
+  width: 65%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #919191;
+}
+
+.countries_wrapper {
+  padding: 30px 65px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.countries_wrapper_loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countries_loader {
+  text-align: center;
+}
+
+@media (max-width: 499px) {
+  .search_input {
+    width: 95%;
+  }
+}
