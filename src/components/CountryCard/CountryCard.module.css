@@ -1,4 +1,4 @@
-.country_card_wrapper {
+.countryCard {
   width: 130px;
   height: 130px;
   display: flex;
@@ -10,13 +10,13 @@
   border-radius: 6px;
 }
 
-.country_card_wrapper p {
+.countryCard p {
   width: 100%;
   text-align: center;
 }
 
 @media (max-width: 499px) {
-  .country_card_wrapper {
+  .countryCard {
     width: 100%;
   }
 }
