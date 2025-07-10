@@ -20,7 +20,7 @@ function Home() {
   const countriesArray = useMemo(() => {
     return !!countries?.length
       ? countries?.filter((country) =>
-          country?.common?.toLowerCase()?.includes(searchValue)
+          country?.common?.toLowerCase()?.includes(searchValue.toLowerCase())
         )
       : [];
   }, [searchValue, countries]);
