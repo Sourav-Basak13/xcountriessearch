@@ -20,10 +20,10 @@ function Home() {
   const countriesArray = useMemo(() => {
     return !!countries?.length
       ? countries?.filter((country) =>
-          country?.common?.toLowerCase()?.includes(debounceSearchValue)
+          country?.common?.toLowerCase()?.includes(searchValue)
         )
       : [];
-  }, [debounceSearchValue, countries]);
+  }, [searchValue, countries]);
 
   useEffect(() => {
     fetchAllCountries()
