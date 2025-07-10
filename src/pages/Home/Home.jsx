@@ -15,12 +15,12 @@ const fetchAllCountries = async () => {
 function Home() {
   const [countries, setCountries] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const { data: debounceSearchValue, load } = useDebounce(searchValue);
+  const { data: debounceSearchValue } = useDebounce(searchValue);
 
   const countriesArray = useMemo(() => {
     return !!countries?.length
       ? countries?.filter((country) =>
-          country?.common?.includes(debounceSearchValue)
+          country?.common?.toLowerCase()?.includes(debounceSearchValue)
         )
       : [];
   }, [debounceSearchValue, countries]);
@@ -45,16 +45,11 @@ function Home() {
         />
       </div>
 
-      <div
-        className={
-          !load ? styles.countries_wrapper : styles.countries_wrapper_loader
-        }
-      >
-        {load && <p className={styles.countries_loader}>Loading........</p>}
-        {!load &&
-          countriesArray?.map((country) => (
-            <CountryCard key={country?.common} {...country} />
-          ))}
+      <div className={styles.countries_wrapper}>
+        {/* {load && <p className={styles.countries_loader}>Loading........</p>} */}
+        {countriesArray?.map((country) => (
+          <CountryCard key={country?.common} {...country} />
+        ))}
       </div>
     </div>
   );
